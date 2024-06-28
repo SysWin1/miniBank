@@ -18,7 +18,7 @@ public class Bank {
     public Account getAccount(String accountNo ) {
         System.out.println("= 해당 계좌번호의 계좌정보 =");
         for(Account account : accounts){
-            if(account.getAccountNo.equals(accountNo)){
+            if(account.getAccountno().equals(accountNo)){
                 System.out.println(account.toString());
                 return account;
             }
@@ -38,7 +38,7 @@ public class Bank {
         ArrayList<Account> myAccount = new ArrayList<Account>();
         System.out.println("= 해당 소유자명의 계좌 목록 =");
         for(Account account : accounts){
-            if(account.getName.equals(name)){
+            if(account.getName().equals(name)){
                 myAccount.add(account); //해당 소유자명 계좌추가
                 System.out.println(account.toString());
             }
@@ -61,7 +61,7 @@ public class Bank {
     public List<Account> getAccounts() {
         System.out.println("= 전체 계좌 목록 =");
         for (Account account : accounts){
-            System.out.println("[" + "계좌번호 :" + account.getAccountNo() +
+            System.out.println("[" + "계좌번호 :" + account.getAccountno() +
                             ", 소유자 명 : " + account.getName() +
                             ", 잔액 : " + account.getBalance() +
                             "]"
