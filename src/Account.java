@@ -49,7 +49,7 @@ public class Account {
 		return accountNo;
 	}
 
-	public long getBalnace() {
+	public long getBalance() {
 		return balance;
 	}
 
