@@ -22,7 +22,7 @@ public class Account {
 			System.out.println("현재 잔액은" + balance + "입니다.");
 			transactions.add(ts);
 		} else {
-			System.out.println("금액오류! 다시 입력해주세요.");
+			System.out.println("금액오류! 처음으로 돌아갑니다");
 		}
 
 	}
@@ -37,7 +37,7 @@ public class Account {
 			System.out.println("현재 잔액은" + balance + "입니다.");
 			transactions.add(ts);
 		} else {
-			System.out.println("잔액이 부족합니다.");
+			System.out.println("잔액이 부족합니다. 처음으로 돌아갑니다.");
 		}
 	}
 

@@ -15,11 +15,9 @@ public class Bank {
 
 
     //'계좌번호'로 계좌찾기 => 계좌를 출력
-    public Account getAccount(String accountNo ) {
-        System.out.println("= 해당 계좌번호의 계좌정보 =");
+    public Account getAccount(String accountNo ) {;
         for(Account account : accounts){
             if(account.getAccountno().equals(accountNo)){
-                System.out.println(account.toString());
                 return account;
             }
         }
@@ -75,5 +73,9 @@ public class Bank {
         return totalAccount;
     }
 
+    @Override
+    public String toString(){
+        return "= 해당 계좌번호의 계좌정보 = \n" + accounts.toString();
+    }
 }
 
