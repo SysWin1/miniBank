@@ -1,7 +1,9 @@
 package org.example;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
 @AllArgsConstructor
 public class Transaction {
     private String transactionDate;
