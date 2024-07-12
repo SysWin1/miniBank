@@ -49,11 +49,14 @@ public class Bank {
      * */
     public List<Account> findAccount(String name) {
         ArrayList<Account> myAccount = new ArrayList<Account>();
-        System.out.println("= 해당 소유자명의 계좌 목록 =");
         for(Account account : accounts){
             if(account.getName().equals(name)){
                 myAccount.add(account); //해당 소유자명 계좌추가
+                System.out.println("= 해당 소유자명의 계좌 목록 =");
                 System.out.println(account.toString());
+            }else{
+                System.out.print("존재하지 않는 고객입니다. 시스템이 다시 시작됩니다. ");
+                break;
             }
         }
         return myAccount; //계좌가 없는 경우
