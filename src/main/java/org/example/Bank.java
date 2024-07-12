@@ -1,15 +1,26 @@
 package org.example;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Builder
+@Getter
+@NoArgsConstructor
 public class Bank {
     private ArrayList<Account> accounts = new ArrayList<Account>();
     private int totalAccount;
 
     //계좌등록 (계좌번호, 소유자명, 잔액)
     public void addAccount(String accountNo, String name ) {
-        Account newAccount = new Account(accountNo,name);
+        Account newAccount = Account.builder()
+                        .accountNo(accountNo)
+                        .name(name)
+                        .build();
         accounts.add(newAccount);
         totalAccount++;
     }
@@ -70,10 +81,6 @@ public class Bank {
         return accounts;
     }
 
-    //5. 총계좌수를 반환
-    public int getTotalAccount(){
-        return totalAccount;
-    }
 
     @Override
     public String toString(){
