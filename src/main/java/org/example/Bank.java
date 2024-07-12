@@ -1,15 +1,28 @@
 package org.example;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Bank {
     private ArrayList<Account> accounts = new ArrayList<Account>();
     private int totalAccount;
 
     //계좌등록 (계좌번호, 소유자명, 잔액)
     public void addAccount(String accountNo, String name ) {
-        Account newAccount = new Account(accountNo,name);
+        Account newAccount = Account.builder()
+                        .accountNo(accountNo)
+                        .name(name)
+                        .transactions(new ArrayList<>())
+                        .build();
         accounts.add(newAccount);
         totalAccount++;
     }
@@ -19,7 +32,7 @@ public class Bank {
     //'계좌번호'로 계좌찾기 => 계좌를 출력
     public Account getAccount(String accountNo ) {;
         for(Account account : accounts){
-            if(account.getAccountno().equals(accountNo)){
+            if(account.getAccountNo().equals(accountNo)){
                 return account;
             }
         }
@@ -61,7 +74,7 @@ public class Bank {
     public List<Account> getAccounts() {
         System.out.println("= 전체 계좌 목록 =");
         for (Account account : accounts){
-            System.out.println("[" + "계좌번호 :" + account.getAccountno() +
+            System.out.println("[" + "계좌번호 :" + account.getAccountNo() +
                             ", 소유자 명 : " + account.getName() +
                             ", 잔액 : " + account.getBalance() +
                             "]"
@@ -70,10 +83,6 @@ public class Bank {
         return accounts;
     }
 
-    //5. 총계좌수를 반환
-    public int getTotalAccount(){
-        return totalAccount;
-    }
 
     @Override
     public String toString(){
