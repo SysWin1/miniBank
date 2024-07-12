@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import lombok.Builder;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class Account {
     private long balance;
     private List<Transaction> transactions = new ArrayList<>();
 
-    public Account(String accountNo, String name) {}
+
     public void deposit(long amount) {
         TransactionDate tsd = new TransactionDate();
         Transaction ts = Transaction.builder()
